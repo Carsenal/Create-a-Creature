@@ -3,6 +3,8 @@ var oldy = -1;
 
 var list = [];
 
+var index = 0;
+
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 canvas.width = 1000;
@@ -32,38 +34,6 @@ function displayList(){
     str += "], ";
     console.log(str);
 }
-/*
-(function() {
-    var canvas = new fabric.Canvas('c');
-    var needFirstPoint = true;
-    
-    function drawNextLine(ctx, x, y) {
-        if (needFirstPoint) {
-            ctx.lineWidth = 5;
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-            needFirstPoint = false;
-        }
-        else {
-            ctx.lineTo(x, y);
-            ctx.stroke();
-        }
-    }
-    
-    
-canvas.on('mouse:down', function(e) {        
-    var offset = fabric.util.getElementOffset(canvas.lowerCanvasEl);
-    var ctx = canvas.getContext('2d');
-    var x = e.e.clientX- offset.left;
-    var y = e.e.clientY- offset.top;
-    canvas.on('mouse:up',function(ev){       
-        drawNextLine(ctx, x, y);
-});
-        
-});
-})();
-
-*/
 
 document.addEventListener("keydown", function(e){
     if(e.keyCode = 83){
@@ -72,6 +42,7 @@ document.addEventListener("keydown", function(e){
         context.closePath();
         oldx = -1;
         oldy = -1;
+        context.drawImage(document.getElementById("img" + index), 0, 0, 1000, 1000);
     }
 });
 

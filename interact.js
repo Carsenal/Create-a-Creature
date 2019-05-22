@@ -48,7 +48,8 @@ function compose(){
     canvas.width = 1000;
     canvas.height = 1000;
     var context = canvas.getContext("2d");
+    
+    context.drawImage(legs.final, 0, 0, 1000, 1000);
     context.drawImage(head.final, 0, 0, 1000, 1000);
     context.drawImage(body.final, 0, 0, 1000, 1000);
-    context.drawImage(legs.final, 0, 0, 1000, 1000);
 }
